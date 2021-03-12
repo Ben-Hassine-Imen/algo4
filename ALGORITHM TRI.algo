@@ -1,0 +1,58 @@
+ALGORITHM TRI
+
+FUNCTION read-size() : INTEGER
+VAR
+    n:INTEGER;
+BEGIN
+    
+REPEAT
+    write('Entrez la taille du tableau:' )
+    read (n);
+UNTIL (n<=0);
+    RETURN n ;
+END
+
+PROCEDURE read-array(n:INTEGER,VAR arr:ARRAY_OF INTEGER)
+VAR
+    i:INTEGER
+BEGIN
+   FOR i FROM0 TO n-1 DO
+      write('Entrez arr[i]:');
+      read(arr[i]);
+   END_FOR
+END
+
+FUNCTION triage(i,j,arr) : arr : ARRAY_OF INTEGER[n];
+VAR
+    i,j,n:INTEGER;
+    
+BEGIN
+ 
+    FOR i FROM 0 TO n-1 DO
+    temp=arr[i];
+    j=i;
+    WHILE (j>0 AND arr[j-1]>temp) DO
+      arr[j]=arr[j-1];
+      j=j-1;
+    END_WHILE
+    arr[j]=temp
+END_FOR
+    RETURN arr ;
+END
+
+
+
+VAR
+ arr : ARRAY_OF INTEGER [];
+ i,n:INTEGER;
+BEGIN
+//read size
+ n:=read-size();
+//remplissage
+ read-array(n,arr)
+ write arr
+//triage
+ write('voilà votre tableau trié:' triage();
+
+END 
+
